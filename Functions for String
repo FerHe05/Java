@@ -1,0 +1,26 @@
+public class App {
+    public static void main(String[] args){
+        String original = "abcde FHIJ ABC abc DEGG    ";
+        
+        String s01 = original.toLowerCase();     
+        String s02 = original.toUpperCase();        
+        String s03 = original.trim();        
+        String s04 = original.substring(2);       
+        String s05 = original.substring(2, 9);        
+        String s06 = original.replace("a", "x");         
+        String s07 = original.replace( "abc", "xy");      
+        int i =  original.indexOf("bc");//the variable value will be the character position value        
+        int j = original.lastIndexOf("bc");//the variable value will be the character position value
+            
+            System.out.println("Original: -" + original  + "-");//original sentence
+            System.out.println("toLowerCase: -" + s01 + "-");//method converts a string to lowercase letters.
+            System.out.println("toUpperCase: -" + s02 + "-");//method converts a string to uppercase letters.
+            System.out.println("Trim: -" + s03 + "-"); //eliminates white spaces
+            System.out.println("Substring -" + s04 + "-");//takes values from position 2
+            System.out.println("LimitSubstring(2,9) -" + s05 + "-");//takes values from position 2 and limits to position 9
+            System.out.println("Replace -" + s06 + "-");//replace A with X
+            System.out.println("Replace (abc - xy) -" + s07 + "-");
+            System.out.println("Index Of 'bc': " + i);
+            System.out.println("Last Index Of 'bc': " + j);
+        }
+}
