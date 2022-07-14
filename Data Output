@@ -1,0 +1,13 @@
+public class App {
+    public static void main(String[] args){
+      int x = 2022;
+      double y = 10.5453;
+      String nome = "Fernando";
+        System.out.print("Hello World, ");
+        System.out.println("Good Morning!");
+        System.out.println("We are in the year " + x);
+        System.out.printf("%.2f\n" , y);
+        System.out.printf("My name is: %s", nome);
+
+        }
+}
