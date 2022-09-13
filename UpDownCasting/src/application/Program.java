@@ -1,13 +1,5 @@
 package application;
-/*
-• Upcasting(junção)
-• Casting da subclasse para superclasse
-• Uso comum: polimorfismo
-• Downcasting
-• Casting (junção) da superclasse para subclasse
-• Palavra instanceof
-• Uso comum: métodos que recebem parâmetros genéricos (ex: Equals)
-*/
+
 import entities.Account;
 import entities.BusinessAccount;
 import entities.SavingsAccount;
