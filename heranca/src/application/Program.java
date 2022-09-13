@@ -1,5 +1,13 @@
 package application;
-
+/*Herança
+• É um tipo de associação que permite que uma classe herde todos dados e 
+comportamentos de outra
+• Definições importantes
+• Vantagens
+• Reuso
+• Polimorfismo
+• Sintaxe
+• class A extends B*/
 import entities.BusinessAccount;
 
 public class Program {
