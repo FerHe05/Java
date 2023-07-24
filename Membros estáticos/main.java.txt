@@ -1,0 +1,40 @@
+
+/*
+Membros estáticos são membros que fazem sentido independentemente de objetos. 
+Não precisam de objeto para serem chamados a partir do própio nome da classe
+
+*/
+
+
+
+
+package AprendizadoJava;
+import java.util.Scanner;/*Importa a biblioteca de recebimento de dados*/
+
+import util.Calculator;
+
+import java.util.Locale;/*Importa a biblioteca de linguagem de região*/
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Hello");
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.print("Enter your radius:");
+		double radius = sc.nextDouble();
+		
+		double c = Calculator.circumference(radius);
+		double v = Calculator.volume(radius);
+		
+		System.out.printf("Circunference: %.2f%n", c);
+		System.out.printf("Volume: %.2f%n", v);
+		System.out.printf("PI value: %.2f%n", Calculator.PI);
+		
+	}
+
+}
