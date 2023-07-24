@@ -1,0 +1,63 @@
+package AprendizadoJava;
+import java.util.Locale;
+import java.util.Scanner;/*Importa a biblioteca de recebimento de dados*/
+
+import entities.Product;
+
+public class Main {
+
+	public static void main(String[] args) {
+	
+		/*
+		 * =================Construtor================= É uma operação da classe, que
+		 * executa no momento da instaciação do objeto Usos comuns: Iniciar valores de
+		 * atributos Permitir ou obrigar que o objeto receba dados / dependências no
+		 * momento de sua instanciação (injeção de dependência) Construtor padrão:
+		 * Product p = new Porduct(); é possível específicar mais de um construtor na
+		 * mesma classe (sobrecarga)
+		 */
+		
+		
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+
+		
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();// sc.nextLine() avança para a próxima linha, mostrando também qual é a atual
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		System.out.print("Quantity in stock: ");
+		int quantity = sc.nextInt();
+		Product product = new Product(name, price, quantity);//Protege de criar algo vazio
+		
+		System.out.println(product.toString());
+		
+		
+		System.out.println("");
+		System.out.println("Product data: " + product);
+		
+		System.out.println("");
+		System.out.print("Enter the number of products to be added in stock: ");
+		quantity = sc.nextInt();
+		product.addProducts(quantity);
+		
+		System.out.println("");
+		System.out.println("Updated data: " + product);
+		
+		System.out.println("");
+		System.out.print("Enter the number of products to be remove from stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+		
+		System.out.println("");
+		System.out.println("Updated data: " + product);
+		
+
+		sc.close();
+
+	}
+}
+	
