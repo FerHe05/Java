@@ -1,0 +1,59 @@
+package AprendizadoJava;
+
+import java.util.Locale;
+import java.util.Scanner;/*Importa a biblioteca de recebimento de dados*/
+
+import entities.Product;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		/*
+		 * ===========This============= É uma referência para o própio objeto Usos
+		 * comuns: Diferenciar atributos de varíaveis locais Passar o próprio objeto
+		 * como objeto na chamada de um método ou contrutor
+		 * 
+		 * ===========Sobrecarga============= É um recurso que uma classe possui, de
+		 * oferecer mais de uma operação com o mesmo nome Disponibiliza mais de uma
+		 * versão da mesma operação, onde a diferença entre elas será os parâmetros
+		 * 
+		 * No caso usado: public Product(String name, double price)
+		 * 
+		 */
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();// sc.nextLine() avança para a próxima linha, mostrando também qual é a atual
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		Product product = new Product(name, price);// Protege de criar algo vazio
+
+		System.out.println(product.toString());
+
+		System.out.println("");
+		System.out.println("Product data: " + product);
+
+		System.out.println("");
+		System.out.print("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+
+		System.out.println("");
+		System.out.println("Updated data: " + product);
+
+		System.out.println("");
+		System.out.print("Enter the number of products to be remove from stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+
+		System.out.println("");
+		System.out.println("Updated data: " + product);
+
+		sc.close();
+
+	}
+}
