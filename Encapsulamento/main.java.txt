@@ -1,0 +1,82 @@
+package AprendizadoJava;
+
+import java.util.Locale;
+import java.util.Scanner;/*Importa a biblioteca de recebimento de dados*/
+
+import entities.Product;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		/*
+		 * É um princípio que consiste em esconder detalhes de implementações de uma classe,
+		 * expondo apenas operações segura
+		 * 
+		 * Regra: um objeto não deve expor nenhum atributo
+		 * Os atributos devem ser acessados pelos métodos get set
+		 * 
+		 * Padrão:
+		 * 
+		 * private String name;
+		 * private double price;
+		 * 
+		 * public String getName(){
+		 * return name;
+		 * }
+		 * 
+		 * public void setName(String name){
+		 * this.name = name; 
+		 * }
+		 * 
+		 * public double getPrice(){
+		 * return price
+		 * }
+		 *
+		 * public void setPrice(double Price){
+		 * this.price = price;
+		 * }
+		 * */
+
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter product data: ");
+		System.out.print("Name: ");
+		String name = sc.nextLine();// sc.nextLine() avança para a próxima linha, mostrando também qual é a atual
+		System.out.print("Price: ");
+		double price = sc.nextDouble();
+		Product product = new Product(name, price);// Protege de criar algo vazio
+
+		product.setName("PCBolado");
+		System.out.println("Nome atualizado: " + product.getName());
+		product.setPrice(price + (price * 0.03));
+		System.out.println("Valor atualizado:  " + product.getPrice());
+		
+		System.out.println("");
+		
+		System.out.println(product.toString());
+		
+		System.out.println("");
+		System.out.println("Product data: " + product);
+
+		System.out.println("");
+		System.out.print("Enter the number of products to be added in stock: ");
+		int quantity = sc.nextInt();
+		product.addProducts(quantity);
+
+		System.out.println("");
+		System.out.println("Updated data: " + product);
+
+		System.out.println("");
+		System.out.print("Enter the number of products to be remove from stock: ");
+		quantity = sc.nextInt();
+		product.removeProducts(quantity);
+
+		System.out.println("");
+		System.out.println("Updated data: " + product);
+
+		sc.close();
+
+	}
+}
